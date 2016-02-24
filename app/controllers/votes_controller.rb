@@ -14,6 +14,6 @@ class VotesController < ApplicationController
   end
 
   def index
-    # render json: Candidate.all
+    render json: Candidate.all
   end
 end
