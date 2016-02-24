@@ -7,10 +7,16 @@ class CandidateTest < ActiveSupport::TestCase
   end
 
   test "candidates can be created" do
-    bern = Candidate.create!(name: "Bernie Sanders", hometown: "Burlington, Vermont", district: "Vermont's at-large", party: "Democrat")
-    racist = Candidate.create(name: "Donald Trump", district: "Top 1%", party: "Republican")
+    frank = Candidate.create!(name: "Frank Underwood", hometown: "Gaffney, SC", district: "South Carolina, District 5", party: "Democrat")
+    trump = Candidate.create(name: "Donald Trump", district: "Top 1%", party: "Republican")
 
     assert Candidate.where(name: "Bernie Sanders"), bern
     refute Candidate.where(name: "Donald Trump").exists?
+  end
+
+  test "candidates can receive votes" do
+    frank = Candidate.create!(name: "Frank Underwood", hometown: "Gaffney, SC", district: "South Carolina, District 5", party: "Democrat")
+    sheep = Voter.create!(name: "Zoe Barnes", party: "Democrat")
+    Vote.create(voter_id: sheep.id, candidate_id: frank.id)
   end
 end

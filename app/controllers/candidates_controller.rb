@@ -1,16 +1,15 @@
 class CandidatesController < ApplicationController
   def index
-    Candidate.create!(name: "Frank Underwood", hometown: "Gaffney, SC", district: "South Carolina", party: "Democrat")
-    Candidate.create!(name: "Bernie Sanders", hometown: "Burlington, VE", district: "Vermont", party: "Democrat")
     render json: Candidate.all
   end
 
   def show
-    render json: Candidate.where(party: "Democrat").first
+    render json: Candidate.find(id: params[:id]).first
+    # render json: Candidate.find(params[:id])
   end
 
   def create
-    render json: Candidate.create(name: "Frank Underwood", hometown: "Gaffney, SC", district: "South Carolina", party: "Democrat")
+    render json: Candidate.create(name: params[:name], hometown: params[:hometown], district: params[:district], party: params[:party])
   end
 end
 

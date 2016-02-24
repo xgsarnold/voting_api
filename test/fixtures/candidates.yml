@@ -1,13 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  hometown: MyString
-  district: MyString
-  party: MyString
+  name: Frank Underwood
+  hometown: Gaffney, SC
+  district: South Carolina, District 5
+  party: Democrat
 
 two:
-  name: MyString
-  hometown: MyString
-  district: MyString
-  party: MyString
+  name: Heather Dunbar
+  hometown: Washington, D.C.
+  district: Washington, D.C., At-large
+  party: Democrat
+
+three:
+  name: Jackie Sharp
+  hometown: Washington, D.C.
+  district: California, District 5
+  party: Democrat
+
+four:
+  name: Hector Mendoza
+  hometown: Washington, D.C.
+  district: Arizona, District 3
+  party: Republican
