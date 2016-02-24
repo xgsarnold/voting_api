@@ -1,11 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  party: MyString
+  name: Gillian Cole
+  party: Independent
   token: MyText
 
 two:
-  name: MyString
-  party: MyString
+  name: Remy Danton
+  party: Republican
+  token: MyText
+
+three:
+  name: Lucas Goodwin
+  party: Democrat
+  token: MyText
+
+four:
+  name: Zoe Barnes
+  party: Democrat
   token: MyText

@@ -5,5 +5,10 @@ class Candidate < ActiveRecord::Base
   validates :district, presence: true
 
 
+  def as_json(options)
+    {name: name,
+     votes: votes.length}
+  end
+
 
 end

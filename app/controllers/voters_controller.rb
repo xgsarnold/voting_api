@@ -4,16 +4,17 @@ class VotersController < ApplicationController
   end
 
   def show
-    render json: Voter.find(id: params[:id]).first
+    render json: Voter.find(params[:id])
   end
 
   def update
-    v = Voter.find(id: params[:id])
-    v.update(name: params[:name], party: params[:party])
+    v = Voter.find(params[:id])
     if v.token == params[:token]
-      v.save
-    else
-      raise StandardError
+      v.name = params[:name] if :name
+      v.party = params[:party] if :party
+    if  v.save
+    render json: v
+    end
     end
   end
 end

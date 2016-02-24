@@ -7,13 +7,15 @@ class CandidatesControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show
+    get :show, id: candidates(:one).id
     assert_response :success
   end
 
   test "should get create" do
+    number_of_candidates = Candidate.count
     get :create
     assert_response :success
+    assert_equal number_of_candidates + 1, Candidates.count
   end
 
 end
