@@ -4,12 +4,12 @@ class VotesController < ApplicationController
   end
 
   def destroy
-    v = Vote.find(vote_id: params[vote_id])
+    v = Vote.find(params[:id])
     v.destroy
-    if v.exists?
+    if v
       render json: "Vote was not deleted."
     else
-      render json: "Vote #{vote_id} has been destroyed."
+      render json: "Vote #{v.id} has been destroyed."
     end
   end
 

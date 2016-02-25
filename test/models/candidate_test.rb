@@ -10,7 +10,7 @@ class CandidateTest < ActiveSupport::TestCase
     frank = Candidate.create!(name: "Frank Underwood", hometown: "Gaffney, SC", district: "South Carolina, District 5", party: "Democrat")
     trump = Candidate.create(name: "Donald Trump", district: "Top 1%", party: "Republican")
 
-    assert Candidate.where(name: "Bernie Sanders"), bern
+    assert Candidate.where(name: "Frank Underwood"), frank
     refute Candidate.where(name: "Donald Trump").exists?
   end
 

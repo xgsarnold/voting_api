@@ -4,7 +4,7 @@ class CandidatesController < ApplicationController
   end
 
   def show
-    render json: Candidate.find(id: params[:id]).first
+    render json: Candidate.find(params[:id])
   end
 
   def create
