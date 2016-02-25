@@ -8,13 +8,28 @@ class VotersController < ApplicationController
   end
 
   def update
+    # Mason example:
     v = Voter.find(params[:id])
     if v.token == params[:token]
-      v.name = params[:name] if :name
-      v.party = params[:party] if :party
-    if  v.save
-    render json: v
+      v.update(voter_params)
+      render json: v
+    else
+        render json: "Invalid token."
     end
-    end
+
+    # My version:
+    # v = Voter.find(params[:id])
+    # if v.token == params[:token]
+    #   v.name = params[:name] if params[:name]
+    #   v.party = params[:party] if params[:party]
+    #   v.save
+    #   render json: v
+    # else
+    #   "Invalid token."
+    # end
+  end
+
+  private def voter_params
+    params.require(:voter).permit(:name, :party)
   end
 end
