@@ -1,4 +1,4 @@
-== README
+#README
 
 This is an API that returns JSON formatted data for current candidates, voters, and the number of votes each candidate has.
 
